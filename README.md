@@ -5,7 +5,7 @@ Materia Arquitectura WEB
 Arquitectura UP
 
 ## Integrantes:
-Ariel Pugliese y Uriel
+Ariel Pugliese y Uriel Segaloff
 
 ## Descripcion del negocio elegido:
 Eventos deportivos, se registran los eventos deportivos con su fecha,
