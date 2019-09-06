@@ -65,6 +65,3 @@ id_lugar, descripcion, calle, altura, localidad, provincia, cubierto(s/n)
 Eventos
 id_evento, id_deporte, id_canal, id_lugar, horadesde, horahasta, fecha, descripcion
 
-
-
-# ArqWebUP
