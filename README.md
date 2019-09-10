@@ -19,7 +19,6 @@ Deportes
 Canales
   Crear
   Listar
-  Imagen (logo)
   Modificar (n° de canal)
 
 Eventos
@@ -53,15 +52,14 @@ POST /lugares/X
 
 ## Estructura de datos
 Deportes
-Id_deporte, descripcion
+Id_deporte, desc_deporte
 
 Canales
-Id_canal, descripcion, imagen, numero
-Lugares
+Id_canal, desc_canal, nro_canal
 
-id_lugar, descripcion, calle, altura, localidad, provincia, cubierto(s/n)
-¿lugaresxdeporte?
+Lugares
+id_lugar, desc_lugar, provincia_lugar, pais_lugar, cubierto_lugar
 
 Eventos
-id_evento, id_deporte, id_canal, id_lugar, horadesde, horahasta, fecha, descripcion
+id_evento, id_deporte, id_canal, id_lugar, fecha_evento, horadesde, horahasta, desc_evento
 
