@@ -32,7 +32,7 @@ USE `tpup`;
 
 DROP TABLE IF EXISTS `deportes`;
 CREATE TABLE IF NOT EXISTS `deportes` (
-  `iddeporte` int(11) NOT NULL AUTO_INCREMENT, -- El autoincremental no complica el post?
+  `id_deporte` int(11) NOT NULL AUTO_INCREMENT, -- El autoincremental no complica el post?
   `desc_deporte` varchar(100) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`iddeporte`)
 ) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
