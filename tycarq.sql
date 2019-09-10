@@ -19,10 +19,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `tycarq`
+-- Base de datos: `tpup`
 --
-CREATE DATABASE IF NOT EXISTS `tycarq` DEFAULT CHARACTER SET latin1 COLLATE latin1_spanish_ci;
-USE `tycarq`;
+CREATE DATABASE IF NOT EXISTS `tpup` DEFAULT CHARACTER SET latin1 COLLATE latin1_spanish_ci;
+USE `tpup`;
 
 -- --------------------------------------------------------
 
@@ -32,7 +32,7 @@ USE `tycarq`;
 
 DROP TABLE IF EXISTS `deportes`;
 CREATE TABLE IF NOT EXISTS `deportes` (
-  `iddeporte` int(11) NOT NULL AUTO_INCREMENT,
+  `iddeporte` int(11) NOT NULL AUTO_INCREMENT, -- El autoincremental no complica el post?
   `desc_deporte` varchar(100) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`iddeporte`)
 ) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
@@ -48,6 +48,25 @@ INSERT INTO `deportes` (`iddeporte`, `desc_deporte`) VALUES
 (10, 'Handball'),
 (9, 'Tenis'),
 (11, 'Paddle');
+COMMIT;
+
+-- Estructura Canales
+
+DROP TABLE IF EXISTS `canales`;
+CREATE TABLE IF NOT EXISTS `canales` (
+  `id_canal` int(3) NOT NULL AUTO_INCREMENT, -- El autoincremental no complica el post?
+  `desc_canal` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
+  `nro_canal` int(3),
+  PRIMARY KEY (`id_canal)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+--Datos Canales
+
+INSERT INTO `canales` (`id_canal`, `desc_canal`, `nro_canal`) VALUES
+(1, 'ESPN', 105),
+(2, 'ESPN 2', 106),
+(3, 'Fox Sports', 201),
+(4, 'TyC Sports', 266),
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
