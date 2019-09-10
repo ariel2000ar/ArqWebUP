@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS `canales` (
   PRIMARY KEY (`id_canal)
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
---Datos Canales
+--Datos  `canales`
 
 INSERT INTO `canales` (`id_canal`, `desc_canal`, `nro_canal`) VALUES
 (1, 'ESPN', 105),
