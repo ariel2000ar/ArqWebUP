@@ -1,6 +1,6 @@
 const express    = require('express');
 const moment     = require('moment');
-const mysql		 = require('mysql');
+const mysql	 = require('mysql');
 
 const app = express();
 
@@ -8,7 +8,7 @@ var connection = mysql.createConnection({
 	host: 'localhost',
 	user: 'root', 
 	password: '', 
-	dataBase: 'tycarq'
+	dataBase: 'tpup'
 });
 	
 connection.connect(function(error){
@@ -20,9 +20,10 @@ connection.connect(function(error){
 });
 
 
+//DEPORTE
 app.get('/deportes', async (req, res) => {
 
-    connection.query("SELECT * FROM tycarq.deportes ORDER BY iddeporte", function(error, rows, fields){
+    connection.query("SELECT * FROM tpup.deportes ORDER BY id_deporte", function(error, rows, fields){
 		if (!!error){
 			console.log(error);
 		}else{
@@ -32,6 +33,18 @@ app.get('/deportes', async (req, res) => {
     //res.json(clients);
 });
 
+//CANALES
+app.get('/canales', async (req, res) => {
+
+    connection.query("SELECT * FROM tpup.canales ORDER BY nro_canal", function(error, rows, fields){
+		if (!!error){
+			console.log(error);
+		}else{
+			console.log(rows);
+		}
+	});
+    //res.json(clients);
+});
 
 // start server
 
