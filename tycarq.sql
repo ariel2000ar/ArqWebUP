@@ -57,9 +57,10 @@ CREATE TABLE IF NOT EXISTS `canales` (
   `id_canal` int(3) NOT NULL AUTO_INCREMENT, -- El autoincremental no complica el post?
   `desc_canal` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
   `nro_canal` int(3),
-  PRIMARY KEY (`id_canal)
+  PRIMARY KEY (`id_canal')
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
+-- Datos para canales
 
 INSERT INTO `canales` (`id_canal`, `desc_canal`, `nro_canal`) VALUES
 (1, 'ESPN', 105),
@@ -67,6 +68,28 @@ INSERT INTO `canales` (`id_canal`, `desc_canal`, `nro_canal`) VALUES
 (3, 'Fox Sports', 201),
 (4, 'TyC Sports', 266),
 COMMIT;
+
+-- Estructura Lugares
+
+DROP TABLE IF EXISTS `lugares`;
+CREATE TABLE IF NOT EXISTS `lugares` (
+  `id_lugar` int(3) NOT NULL AUTO_INCREMENT, -- El autoincremental no complica el post?
+  `desc_lugar` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
+  `provincia_lugar` varchar(50) COLLATE latin1_spanish_ci,
+  `pais_lugar` varchar(50) COLLATE latin1_spanish_ci,
+  `cubierto_lugar` varchar(1) COLLATE latin1_spanish_ci,
+  PRIMARY KEY (`id_lugar')
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+-- Datos para lugares
+
+INSERT INTO `lugares` (`id_lugar`, `desc_lugar`, `provincia_lugar`, `pais_lugar`, `cubierto_canal`) VALUES
+(1, 'BOMBONERA', 'BUENOS AIRES', 'ARGENTINA', 'N'),
+(1, 'MORUMBI', 'SAN PABLO', 'BRASIL', 'N'),
+(3, 'ARTHUR ASHE', 'NEW YORK', 'ESTADOS UNIDOS', 'S'),
+(4, 'AT&T CENTER', 'TEXAS', 'ESTADOS UNIDOS', 'S'),
+COMMIT;
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
