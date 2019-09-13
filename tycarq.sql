@@ -34,21 +34,20 @@ DROP TABLE IF EXISTS `deportes`;
 CREATE TABLE IF NOT EXISTS `deportes` (
   `id_deporte` int(11) NOT NULL AUTO_INCREMENT, -- El autoincremental no complica el post?
   `desc_deporte` varchar(100) COLLATE latin1_spanish_ci NOT NULL,
-  PRIMARY KEY (`iddeporte`)
+  PRIMARY KEY (`id_deporte`)
 ) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `deportes`
 --
 
-INSERT INTO `deportes` (`iddeporte`, `desc_deporte`) VALUES
+INSERT INTO `deportes` (`id_deporte`, `desc_deporte`) VALUES
 (1, 'Futbol'),
 (7, 'Rugby'),
 (3, 'Basquet'),
 (10, 'Handball'),
 (9, 'Tenis'),
 (11, 'Paddle');
-COMMIT;
 
 -- Estructura Canales
 
@@ -66,8 +65,7 @@ INSERT INTO `canales` (`id_canal`, `desc_canal`, `nro_canal`) VALUES
 (1, 'ESPN', 105),
 (2, 'ESPN 2', 106),
 (3, 'Fox Sports', 201),
-(4, 'TyC Sports', 266),
-COMMIT;
+(4, 'TyC Sports', 266);
 
 -- Estructura Lugares
 
@@ -83,14 +81,9 @@ CREATE TABLE IF NOT EXISTS `lugares` (
 
 -- Datos para lugares
 
-INSERT INTO `lugares` (`id_lugar`, `desc_lugar`, `provincia_lugar`, `pais_lugar`, `cubierto_canal`) VALUES
+INSERT INTO `lugares` (`id_lugar`, `desc_lugar`, `provincia_lugar`, `pais_lugar`, `cubierto_lugar`) VALUES
 (1, 'BOMBONERA', 'BUENOS AIRES', 'ARGENTINA', 'N'),
-(1, 'MORUMBI', 'SAN PABLO', 'BRASIL', 'N'),
+(2, 'MORUMBI', 'SAN PABLO', 'BRASIL', 'N'),
 (3, 'ARTHUR ASHE', 'NEW YORK', 'ESTADOS UNIDOS', 'S'),
-(4, 'AT&T CENTER', 'TEXAS', 'ESTADOS UNIDOS', 'S'),
+(4, 'AT&T CENTER', 'TEXAS', 'ESTADOS UNIDOS', 'S');
 COMMIT;
-
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
