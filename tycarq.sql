@@ -57,7 +57,7 @@ CREATE TABLE IF NOT EXISTS `canales` (
   `id_canal` int(3) NOT NULL AUTO_INCREMENT, -- El autoincremental no complica el post?
   `desc_canal` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
   `nro_canal` int(3),
-  PRIMARY KEY (`id_canal')
+  PRIMARY KEY (`id_canal`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 -- Datos para canales
@@ -78,7 +78,7 @@ CREATE TABLE IF NOT EXISTS `lugares` (
   `provincia_lugar` varchar(50) COLLATE latin1_spanish_ci,
   `pais_lugar` varchar(50) COLLATE latin1_spanish_ci,
   `cubierto_lugar` varchar(1) COLLATE latin1_spanish_ci,
-  PRIMARY KEY (`id_lugar')
+  PRIMARY KEY (`id_lugar`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 -- Datos para lugares
