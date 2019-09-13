@@ -37,16 +37,16 @@ Lugares
 ## Requests
 Deportes
 GET /deportes/
-POST /deportes/X
+POST /deportes/desc_deporte
 
 Canales
 GET /canales/
-GET /canales/X
+GET /canales/id_canal
 POST /canales/X
 
 Lugares
 GET /lugares/
-GET /lugares/X
+GET /lugares/id_lugar
 POST /lugares/X
 
 ## Estructura de datos
