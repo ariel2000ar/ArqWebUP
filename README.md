@@ -42,7 +42,6 @@ POST /deportes/X
 Canales
 GET /canales/
 GET /canales/X
-PUT /canales/X/image
 POST /canales/X
 
 Lugares
