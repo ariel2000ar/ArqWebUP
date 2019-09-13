@@ -46,6 +46,20 @@ app.get('/canales', async (req, res) => {
     //res.json(clients);
 });
 
+//LUGARES//CANALES
+app.get('/lugares', async (req, res) => {
+
+    connection.query("SELECT * FROM tpup.lugares ORDER BY id_lugar", function(error, rows, fields){
+		if (!!error){
+			console.log(error);
+		}else{
+			console.log(rows);
+		}
+	});
+    //res.json(clients);
+});
+
+
 // start server
 
 app.listen(process.env.PORT || 3000, function () {
