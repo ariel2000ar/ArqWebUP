@@ -86,4 +86,28 @@ INSERT INTO `lugares` (`id_lugar`, `desc_lugar`, `provincia_lugar`, `pais_lugar`
 (2, 'MORUMBI', 'SAN PABLO', 'BRASIL', 'N'),
 (3, 'ARTHUR ASHE', 'NEW YORK', 'ESTADOS UNIDOS', 'S'),
 (4, 'AT&T CENTER', 'TEXAS', 'ESTADOS UNIDOS', 'S');
+
+-- Estructura Eventos
+
+DROP TABLE IF EXISTS `eventos`;
+CREATE TABLE IF NOT EXISTS `eventos` (
+  `id_evento` int(5) NOT NULL AUTO_INCREMENT, 
+  `desc_evento` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
+  `id_deporte` int(11),
+  `id_canal` int(3),
+  `id_lugar` int(3),
+  `fecha_evento` date,
+  `horadesde` int(2),
+  `horahasta` int(2),
+  PRIMARY KEY (`id_evento`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+-- Datos para eventos
+
+INSERT INTO `eventos` (`id_evento`, `desc_evento`, `id_deporte`, `id_canal`, `id_lugar`, `fecha_evento`, `horadesde`, `horahasta`) VALUES
+(1, 'FINAL US OPEN', 9, 1, 3, '2019-09-10', 12, 16),
+(2, 'SEMI FINAL LIBERTADORES', 1, 3, 1, '2019-10-26', 21, 23),
+(3, 'FINAL PLAY OFF', 3, 4, 4, '2019-09-30', 18, 20),
+(4, 'FINAL COPA AMERICA 2019', 1, 2, 2, '2019-06-29', 16, 18),
+
 COMMIT;
