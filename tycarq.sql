@@ -108,6 +108,6 @@ INSERT INTO `eventos` (`id_evento`, `desc_evento`, `id_deporte`, `id_canal`, `id
 (1, 'FINAL US OPEN', 9, 1, 3, '2019-09-10', 12, 16),
 (2, 'SEMI FINAL LIBERTADORES', 1, 3, 1, '2019-10-26', 21, 23),
 (3, 'FINAL PLAY OFF', 3, 4, 4, '2019-09-30', 18, 20),
-(4, 'FINAL COPA AMERICA 2019', 1, 2, 2, '2019-06-29', 16, 18),
+(4, 'FINAL COPA AMERICA 2019', 1, 2, 2, '2019-06-29', 16, 18);
 
 COMMIT;
