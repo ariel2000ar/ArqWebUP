@@ -84,6 +84,17 @@ app.get('/canales', async (req, res) => {
 	});
 });
 
+app.get('/canales/:nro', async (req, res) => {
+
+    connection.query("SELECT * FROM canales where nro_canal="+req.params.nro, function(error, rows, fields){
+		if (!!error){
+			console.log(error);
+		}else{
+			res.json(rows);
+		}
+	});
+});
+
 //LUGARES
 app.get('/lugares', async (req, res) => {
 
