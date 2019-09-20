@@ -23,31 +23,35 @@ Canales
 
 Eventos
   Crear
-  Read
   Delete
   Update
   List
 
 Lugares
   Crear
-  Read
   Delete
   List
 
 ## Requests
 Deportes
-GET /deportes/
-POST /deportes/desc_deporte
+  GET /deportes/
+  GET /deportes/id_deporte
+  POST /deportes/
 
 Canales
-GET /canales/
-GET /canales/id_canal
-POST /canales/X
+  GET /canales/
+  GET /canales/nro_canal
+  POST /canales/
 
 Lugares
-GET /lugares/
-GET /lugares/id_lugar
-POST /lugares/X
+  GET /lugares/
+  GET /lugares/id_lugar
+  POST /lugares/
+  
+Eventos
+  GET /eventos/
+  GET /eventos/deportes/id_deporte
+  POST /eventos
 
 ## Estructura de datos
 Deportes
