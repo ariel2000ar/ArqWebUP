@@ -71,17 +71,6 @@ app.get('/deportes/:id', async (req, res) => {
 	});
 });
 
-/*
-app.get('/deportesbyid', async (req, res) => {
-    connection.query("SELECT * FROM deportes where id_deporte = "+req.body.id, function(error, rows, fields){
-		if (!!error){
-			console.log(error);
-		}else{
-			res.json(rows);
-		}
-	});
-});
-*/
 
 //CANALES
 app.get('/canales', async (req, res) => {
@@ -99,6 +88,18 @@ app.get('/canales', async (req, res) => {
 app.get('/lugares', async (req, res) => {
 
     connection.query("SELECT * FROM tpup.lugares ORDER BY id_lugar", function(error, rows, fields){
+		if (!!error){
+			console.log(error);
+		}else{
+			res.json(rows);
+		}
+	});
+});
+
+//EVENTOS
+app.get('/eventos', async (req, res) => {
+
+    connection.query("SELECT * FROM tpup.eventos ORDER BY id_evento", function(error, rows, fields){
 		if (!!error){
 			console.log(error);
 		}else{
