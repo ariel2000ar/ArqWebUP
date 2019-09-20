@@ -44,8 +44,8 @@ app.get('/deportes', async (req, res) => {
 	}	
 });
 
-/*
-app.post('/deportes2', async (req, res) => {
+
+app.post('/deportes', async (req, res) => {
     if (!req.body.desc_deporte){
 		res.status(400);
 	}else{
@@ -59,7 +59,7 @@ app.post('/deportes2', async (req, res) => {
 		});		
 	}	
 });
-*/
+
 
 app.get('/deportes/:id', async (req, res) => {
     connection.query("SELECT * FROM deportes where id_deporte="+req.params.id, function(error, rows, fields){
