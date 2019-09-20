@@ -119,6 +119,17 @@ app.get('/eventos', async (req, res) => {
 	});
 });
 
+//Eventos por Deporte
+app.get('/eventos/deportes/id:', async (req, res) => {
+
+    connection.query("SELECT * FROM tpup.eventos where id_deporte="+req.params.id, function(error, rows, fields){
+		if (!!error){
+			console.log(error);
+		}else{
+			res.json(rows);
+		}
+	});
+});
 
 // start server
 app.listen(process.env.PORT || 3000, function () {
