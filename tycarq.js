@@ -107,6 +107,17 @@ app.get('/lugares', async (req, res) => {
 	});
 });
 
+app.get('/lugares/:id', async (req, res) => {
+
+    connection.query("SELECT * FROM lugares where id_lugar="+req.params.id, function(error, rows, fields){
+		if (!!error){
+			console.log(error);
+		}else{
+			res.json(rows);
+		}
+	});
+});
+
 //EVENTOS
 app.get('/eventos', async (req, res) => {
 
@@ -120,9 +131,21 @@ app.get('/eventos', async (req, res) => {
 });
 
 //Eventos por Deporte
-app.get('/eventos/deportes/id:', async (req, res) => {
+app.get('/eventos/deportes/:id', async (req, res) => {
 
     connection.query("SELECT * FROM tpup.eventos where id_deporte="+req.params.id, function(error, rows, fields){
+		if (!!error){
+			console.log(error);
+		}else{
+			res.json(rows);
+		}
+	});
+});
+
+//Eventos por deporte en un lugar
+app.get('/eventos/deportes/:id/lugares/:id2', async (req, res) => {
+
+    connection.query("SELECT * FROM tpup.eventos where id_deporte="+req.params.id+" and id_lugar="+req.params.id2, function(error, rows, fields){
 		if (!!error){
 			console.log(error);
 		}else{
