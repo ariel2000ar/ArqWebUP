@@ -154,6 +154,18 @@ app.get('/eventos/deportes/:id/lugares/:id2', async (req, res) => {
 	});
 });
 
+//Eliminar Evento
+app.delete('/eventos/:id', async (req, res) => {
+
+    connection.query("DELETE FROM tpup.eventos where id_evento="+req.params.id, function(error, rows, fields){
+		if (!!error){
+			console.log(error);
+		}else{
+			console.log('200, Eliminacion exitosa');
+		}
+	});
+});
+
 // start server
 app.listen(process.env.PORT || 3000, function () {
     console.log('API andando con express...');
