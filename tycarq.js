@@ -15,7 +15,7 @@ var connection = mysql.createConnection({
 	
 connection.connect(function(error){
 	if (!!error){
-		console.log('Error');
+		console.log('Error 500 Internal Server Error');
 	}else{
 		console.log('Estas conectado a la base');
 	}
