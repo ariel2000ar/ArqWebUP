@@ -51,6 +51,7 @@ Lugares
 Eventos
   GET /eventos/
   GET /eventos/deportes/id_deporte
+  GET /eventos/deportes/id_deporte/lugares/id_lugares
   POST /eventos
 
 ## Estructura de datos
