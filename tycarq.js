@@ -25,23 +25,14 @@ connection.connect(function(error){
 //DEPORTE
 
 app.get('/deportes', async (req, res) => {
-    if (!req.body.id){
-		connection.query("SELECT * FROM deportes ORDER BY id_deporte", function(error, rows, fields){
-			if (!!error){
-				console.log(error);
-			}else{
-				res.json(rows);
-			}
-		});
-	}else{
-		connection.query("SELECT * FROM deportes where id_deporte = "+req.body.id, function(error, rows, fields){
-			if (!!error){
-				console.log(error);
-			}else{
-				res.json(rows);
-			}
-		});		
-	}	
+
+    connection.query("SELECT * FROM deportes ORDER BY id_deporte", function(error, rows, fields){
+		if (!!error){
+			console.log(error);
+		}else{
+			res.json(rows);
+		}
+	});	
 });
 
 
@@ -53,13 +44,12 @@ app.post('/deportes', async (req, res) => {
 			if (!!error){
 				console.log(error);
 			}else{
-				result.message = "Deporte agregado exitosamente";
+				result.message = "200. Deporte agregado exitosamente";
 				res.json(result);
 			}
 		});		
 	}	
 });
-
 
 app.get('/deportes/:id', async (req, res) => {
     connection.query("SELECT * FROM deportes where id_deporte="+req.params.id, function(error, rows, fields){
@@ -170,3 +160,4 @@ app.delete('/eventos/:id', async (req, res) => {
 app.listen(process.env.PORT || 3000, function () {
     console.log('API andando con express...');
 });
+
