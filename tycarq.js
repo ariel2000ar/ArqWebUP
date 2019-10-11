@@ -14,7 +14,7 @@ var connection = mysql.createConnection({
 });
 	
 connection.connect(function(error){
-	if (!!error){
+	if (error){
 		console.log('Error 500 Internal Server Error');
 	}else{
 		console.log('Estas conectado a la base');
@@ -27,7 +27,7 @@ connection.connect(function(error){
 app.get('/deportes', async (req, res) => {
 
     connection.query("SELECT * FROM deportes ORDER BY id_deporte", function(error, rows, fields){
-		if (!!error){
+		if (error){
 			console.log(error);
 		}else{
 			res.json(rows);
@@ -41,7 +41,7 @@ app.post('/deportes', async (req, res) => {
 		res.status(400);
 	}else{
 		connection.query("INSERT INTO deportes (desc_deporte) VALUES ('"+req.body.desc_deporte+"')", function(error, result){
-			if (!!error){
+			if (error){
 				console.log(error);
 			}else{
 				result.message = "200. Deporte agregado exitosamente";
@@ -53,7 +53,7 @@ app.post('/deportes', async (req, res) => {
 
 app.get('/deportes/:id', async (req, res) => {
     connection.query("SELECT * FROM deportes where id_deporte="+req.params.id, function(error, rows, fields){
-		if (!!error){
+		if (error){
 			console.log(error);
 		}else{
 			res.json(rows);
@@ -66,7 +66,7 @@ app.get('/deportes/:id', async (req, res) => {
 app.get('/canales', async (req, res) => {
 
     connection.query("SELECT * FROM canales ORDER BY nro_canal", function(error, rows, fields){
-		if (!!error){
+		if (error){
 			console.log(error);
 		}else{
 			res.json(rows);
@@ -77,7 +77,7 @@ app.get('/canales', async (req, res) => {
 app.get('/canales/:nro', async (req, res) => {
 
     connection.query("SELECT * FROM canales where nro_canal="+req.params.nro, function(error, rows, fields){
-		if (!!error){
+		if (error){
 			console.log(error);
 		}else{
 			res.json(rows);
@@ -89,7 +89,7 @@ app.get('/canales/:nro', async (req, res) => {
 app.get('/lugares', async (req, res) => {
 
     connection.query("SELECT * FROM tpup.lugares ORDER BY id_lugar", function(error, rows, fields){
-		if (!!error){
+		if (error){
 			console.log(error);
 		}else{
 			res.json(rows);
@@ -100,12 +100,27 @@ app.get('/lugares', async (req, res) => {
 app.get('/lugares/:id', async (req, res) => {
 
     connection.query("SELECT * FROM lugares where id_lugar="+req.params.id, function(error, rows, fields){
-		if (!!error){
+		if (error){
 			console.log(error);
 		}else{
 			res.json(rows);
 		}
 	});
+});
+
+app.post('/lugares', async (req, res) => {
+    if (!req.body.desc_lugar){
+		res.status(400);
+	}else{
+		connection.query("INSERT INTO lugares (desc_lugar, provincia_lugar, pais_lugar, cubierto_lugar) VALUES ('"+req.body.desc_lugar+"','"+req.body.provincia_lugar+"','"+req.body.pais_lugar+"','"+req.body.cubierto_lugar+"')", function(error, result){
+			if (error){
+				console.log(error);
+			}else{
+				result.message = "200. Lugar agregado exitosamente";
+				res.json(result);
+			}
+		});		
+	}	
 });
 
 //EVENTOS
@@ -124,7 +139,7 @@ app.get('/eventos', async (req, res) => {
 app.get('/eventos/deportes/:id', async (req, res) => {
 
     connection.query("SELECT * FROM tpup.eventos where id_deporte="+req.params.id, function(error, rows, fields){
-		if (!!error){
+		if (error){
 			console.log(error);
 		}else{
 			res.json(rows);
@@ -136,7 +151,7 @@ app.get('/eventos/deportes/:id', async (req, res) => {
 app.get('/eventos/deportes/:id/lugares/:id2', async (req, res) => {
 
     connection.query("SELECT * FROM tpup.eventos where id_deporte="+req.params.id+" and id_lugar="+req.params.id2, function(error, rows, fields){
-		if (!!error){
+		if (error){
 			console.log(error);
 		}else{
 			res.json(rows);
@@ -146,7 +161,7 @@ app.get('/eventos/deportes/:id/lugares/:id2', async (req, res) => {
 
 //Eliminar Evento
 app.delete('/eventos/:id', async (req, res) => {
-
+	
     connection.query("DELETE FROM tpup.eventos where id_evento="+req.params.id, function(error, rows, fields){
 		if (!!error){
 			console.log(error);
