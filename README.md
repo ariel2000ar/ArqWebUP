@@ -12,25 +12,25 @@ Eventos deportivos, se registran los eventos deportivos con su fecha,
 el deporte, el lugar y la cadena que va a transmitir y luego se pueden hacer distintas consultas sobre estos eventos.
 
 ## Endpoints
-Deportes
-  Crear
-  Listar
+Deportes:
+  Crear,
+  Listar todos,
+  Listar uno
 
-Canales
-  Crear
-  Listar
-  Modificar (n° de canal)
+Canales:
+  Listar todos,
+  Listar uno
 
 Eventos
-  Crear
   Delete
-  Update
-  List
+  Listar todos,
+  Listar eventos de un deporte,
+  Listar eventos de un deporte en un lugar
 
 Lugares
   Crear
-  Delete
-  List
+  Listar todos,
+  Listar uno
 
 ## Requests
 Deportes
@@ -41,7 +41,6 @@ Deportes
 Canales
   GET /canales/
   GET /canales/nro_canal
-  POST /canales/
 
 Lugares
   GET /lugares/
@@ -53,7 +52,6 @@ Eventos
   GET /eventos/deportes/id_deporte
   GET /eventos/deportes/id_deporte/lugares/id_lugares
   DELETE /eventos/id_evento
-  POST /eventos
 
 ## Estructura de datos
 Deportes
