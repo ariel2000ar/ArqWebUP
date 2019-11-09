@@ -171,8 +171,20 @@ app.delete('/eventos/:id', async (req, res) => {
 	});
 });
 
+//Eliminar Deporte
+app.delete('/deportes/:id', async (req, res) => {
+	
+    connection.query("DELETE FROM tpup.deportes where id_deporte="+req.params.id, function(error, rows, fields){
+		if (!!error){
+			console.log(error);
+		}else{
+			
+			res.json(fields);
+		}
+	});
+});
+
 // start server
 app.listen(process.env.PORT || 3000, function () {
     console.log('API andando con express...');
 });
-
