@@ -15,7 +15,8 @@ el deporte, el lugar y la cadena que va a transmitir y luego se pueden hacer dis
 Deportes:
   Crear,
   Listar todos,
-  Listar uno
+  Listar uno,
+  Eliminar
 
 Canales:
   Listar todos,
@@ -37,6 +38,7 @@ Deportes
   GET /deportes/
   GET /deportes/id_deporte
   POST /deportes/
+  DELETE /deportes/id_deporte
 
 Canales
   GET /canales/
