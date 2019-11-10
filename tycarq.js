@@ -139,7 +139,7 @@ app.post('/lugares', async (req, res) => {
 app.get('/eventos', async (req, res) => {
 
     connection.query("SELECT * FROM tpup.eventos ORDER BY id_evento", function(error, rows, fields){
-		if (!!error){
+		if (error){
 			console.log(error);
 		}else{
 			res.json(rows);
