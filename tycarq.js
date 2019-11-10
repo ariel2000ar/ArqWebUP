@@ -61,6 +61,18 @@ app.get('/deportes/:id', async (req, res) => {
 	});
 });
 
+//Eliminar Deporte
+app.delete('/deportes/:id', async (req, res) => {
+	
+    connection.query("DELETE FROM tpup.deportes where id_deporte="+req.params.id, function(error, rows, fields){
+		if (error){
+			console.log(error);
+		}else{
+			
+			res.json(fields);
+		}
+	});
+});
 
 //CANALES
 app.get('/canales', async (req, res) => {
@@ -163,7 +175,7 @@ app.get('/eventos/deportes/:id/lugares/:id2', async (req, res) => {
 app.delete('/eventos/:id', async (req, res) => {
 	
     connection.query("DELETE FROM tpup.eventos where id_evento="+req.params.id, function(error, rows, fields){
-		if (!!error){
+		if (error){
 			console.log(error);
 		}else{
 			console.log('200, Eliminacion exitosa');
@@ -171,18 +183,6 @@ app.delete('/eventos/:id', async (req, res) => {
 	});
 });
 
-//Eliminar Deporte
-app.delete('/deportes/:id', async (req, res) => {
-	
-    connection.query("DELETE FROM tpup.deportes where id_deporte="+req.params.id, function(error, rows, fields){
-		if (!!error){
-			console.log(error);
-		}else{
-			
-			res.json(fields);
-		}
-	});
-});
 
 // start server
 app.listen(process.env.PORT || 3000, function () {
